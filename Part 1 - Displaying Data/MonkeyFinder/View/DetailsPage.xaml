@@ -44,7 +44,8 @@
                         HorizontalOptions="Center" 
                         WidthRequest="200" 
                         Margin="8"
-                        Style="{StaticResource ButtonOutline}"/>
+                        Style="{StaticResource ButtonOutline}"
+                        Grid.Row="2"/>
 
             <VerticalStackLayout Grid.Row="2" Padding="10" Spacing="10">
                 <Label Style="{StaticResource MediumLabel}" Text="{Binding Monkey.Details}" />
