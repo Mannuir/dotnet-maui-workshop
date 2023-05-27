@@ -15,6 +15,8 @@ public partial class MonkeysViewModel : BaseViewModel
         this.connectivity = connectivity;
         this.geolocation = geolocation;
     }
+    [ObservableProperty]
+    bool isRefreshing;
 
     [RelayCommand]
     async Task GetClosestMonkey()
@@ -98,6 +100,7 @@ public partial class MonkeysViewModel : BaseViewModel
         finally
         {
             IsBusy = false;
+            IsRefreshing = false;
         }
     }
 }
