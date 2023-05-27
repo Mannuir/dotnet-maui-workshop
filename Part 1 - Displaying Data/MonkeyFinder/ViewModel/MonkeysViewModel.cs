@@ -75,6 +75,11 @@ public partial class MonkeysViewModel : BaseViewModel
 
         try
         {
+            if (connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await Shell.Current.DisplayAlert("Internet issue", $"Check your internet and try again!", "OK");
+                return;
+            }
             IsBusy = true;
             var monkeys = await monkeyService.GetMonkeys();
 
